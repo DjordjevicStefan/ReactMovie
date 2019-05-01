@@ -3,19 +3,25 @@ import {Link} from "react-router-dom"
 
 const NavBar = () => {
   return ( 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <Link to="/" href="#">Vidly</Link>
   
  
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <Link class="nav-link" to="/">Movies </Link>
+    <ul className="navbar-nav">
+      <li className="ml-2 nav-item">
+        <Link className="nav-link" to="/">Movies </Link>
       </li>
-      <li class="nav-item">
-        <Link class="nav-link" to="#">Customers</Link>
+      <li className="ml-2 nav-item">
+        <Link className="nav-link" to="/customers">Customers</Link>
       </li>
-      <li class="nav-item">
-        <Link class="nav-link" to="#">Rental</Link>
+      <li className="ml-2 nav-item">
+        <Link className="nav-link" to="/rental">Rental</Link>
+      </li>
+      <li className="ml-2 nav-item">
+        <Link className="nav-link" to="/login">Login</Link>
+      </li>
+      <li className="ml-2 nav-item">
+        <Link className="nav-link" to="/register">Register</Link>
       </li>
       
     </ul>

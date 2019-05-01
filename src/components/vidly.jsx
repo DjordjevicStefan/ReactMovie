@@ -129,11 +129,7 @@ class Vidly extends Component {
 
     return (
       <React.Fragment>
-        <div className="row"> 
-           <div className="col">
-             <NavBar/>
-           </div>
-        </div>
+       
         <div className="row">
           <div className="col-2">
             <ListGroup

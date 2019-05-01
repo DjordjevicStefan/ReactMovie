@@ -1,13 +1,42 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
 
-import './App.css';
+import "./App.css";
+
+import NavBar from "./components/common/navbar";
+import Customers from "./components/customers";
+import Rental from "./components/rental";
+import Vidly from "./components/vidly";
+import MovieForm from "./components/movieForm";
+import Login from "./components/loginForm";
+import Register from "./components/registerForm";
 
 class App extends Component {
   render() {
     return (
-      <main className="container">
-          <h1>Dobrodosli na napoleon zurku </h1>
-      </main>
+      <React.Fragment>
+        <div className="row">
+          <div className="col">
+            <NavBar />
+          </div>
+        </div>
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <Switch>
+              <Route path="/movies/:id" component={MovieForm} />
+                <Route path="/customers" component={Customers} />
+                <Route path="/rental" component={Rental} />
+                <Route path="/register" component={Register} />
+                <Route path="/login" component={Login} />
+                <Redirect from="/notfound" to="/" />
+                <Route path="/" component={Vidly} />
+                <Redirect to="/notfound" />
+              </Switch>
+            </div>
+          </div>
+        </div>
+      </React.Fragment>
     );
   }
 }
