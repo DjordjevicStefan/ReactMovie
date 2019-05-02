@@ -1,18 +1,21 @@
 import React, { Component } from "react";
 import { getMovies } from "../services/fakeMovieService";
+
 // import Like from "./common/like";
+
 import Pagination from "./common/pagination";
-import NavBar from "./common/navbar"
+
+// import NavBar from "./common/navbar"
 
 import { paginate } from "../utilities/paginate";
 import { getGenres } from "../services/fakeGenreService";
 import ListGroup from "./common/listGroup";
 import MoviesTable from "./moviesTable";
-import Rental from "./rental";
-import Customers from "./customers";
-import _ from "lodash" ;
 
-import {Route, Switch, Redirect } from "react-router-dom" ;
+import _ from "lodash" ;
+import {Link} from "react-router-dom"
+
+// import {Route, Switch, Redirect } from "react-router-dom" ;
 
 
 class Vidly extends Component {
@@ -129,7 +132,7 @@ class Vidly extends Component {
 
     return (
       <React.Fragment>
-       
+         
         <div className="row">
           <div className="col-2">
             <ListGroup
@@ -139,6 +142,7 @@ class Vidly extends Component {
             />
           </div>
           <div className="col">
+            <Link to="/movies/new" className="btn btn-primary mt-3">Add new movie</Link>
             <h1>ostalo je jos {totalCount} filmova</h1>
             <MoviesTable
               movies={movies}

@@ -7,9 +7,10 @@ import NavBar from "./components/common/navbar";
 import Customers from "./components/customers";
 import Rental from "./components/rental";
 import Vidly from "./components/vidly";
-import MovieForm from "./components/movieForm";
+
 import Login from "./components/loginForm";
 import Register from "./components/registerForm";
+import MovieForm from "./components/movieForm";
 
 class App extends Component {
   render() {
@@ -24,7 +25,9 @@ class App extends Component {
           <div className="row">
             <div className="col">
               <Switch>
+              
               <Route path="/movies/:id" component={MovieForm} />
+              
                 <Route path="/customers" component={Customers} />
                 <Route path="/rental" component={Rental} />
                 <Route path="/register" component={Register} />

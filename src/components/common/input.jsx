@@ -13,7 +13,7 @@ const Input = ({name, label, onChange, value, error, type }) => {
    className="form-control" 
    id={name}  
    placeholder={type}/>
-   <small id="emailHelp" className="form-text text-muted">We'll never share your {name} with anyone else.</small>
+   {/* <small id="emailHelp" className="form-text text-muted">We'll never share your {name} with anyone else.</small> */}
 {  error  &&  <div className="alert alert-danger">{error}</div>}
  </div> );
 }

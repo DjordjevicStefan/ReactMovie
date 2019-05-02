@@ -44,6 +44,14 @@ class Form extends Component {
     //  return Object.keys(errors).length === 0 ? null : errors ;
   };
 
+  // saveMovie = () => {
+  //    console.log("movie saved in memory");
+     
+
+  // }
+
+  
+
   handleSubmit = e => {
     e.preventDefault();
 
@@ -56,8 +64,10 @@ class Form extends Component {
     this.doSubmit();
   };
 
+ 
+
   handleChange = e => {
-    console.log(e.currentTarget);
+    
 
     let errors = { ...this.state.errors };
     let errorMsg = this.validateProperty(e.currentTarget);
@@ -77,6 +87,17 @@ class Form extends Component {
     );
   };
 
+
+
+  // renderSaveBtn = label =>{
+  //   return (
+  //     <button disabled={this.saveMovie()} className="btn btn-primary">
+  //       {label}
+  //     </button>
+  //   );
+
+  // }
+
   ////// zadavanje defotne vrednosti nekom argumentu , ovde primer type
   renderInput = (name, label, type = "text") => {
     return (
@@ -90,6 +111,34 @@ class Form extends Component {
       />
     );
   };
+
+  handleSelect = e => {
+    let selected = e.target.value ;
+    this.setState({ genre : selected });
+  }
+
+  renderSelectInput = (name, label ,opt1,opt2,opt3 ) => {
+    return (
+      <div className="form-group">
+      <label htmlFor={name}>{label}</label>
+      <select onChange={this.handleSelect} className="form-control">
+      
+       name ={name}
+       autoFocus
+       type="text" 
+       className="form-control" 
+       id={name}  
+       <option value={opt1}>{opt1}</option>
+      <option value={opt2}>{opt2}</option>
+      <option value={opt3}>{opt3}</option>
+      
+        </select>
+       
+     </div> );
+
+    
+  };
+
 }
 
 export default Form;
